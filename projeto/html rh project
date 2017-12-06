@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="CSS/estilo-formulario.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <link rel="shortcut icon" href="CSS/images/favicon.ico" type="image/x-icon">
+    <title>Requisição de Vaga</title>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" action="http://localhost:8080/desenvolvedor" method="POST" class="form">
+            <div class="first-block">
+                <fieldset class="form-wrapper">
+                    <header class="header">
+                        <h1 class="title">Requisição de Vaga</h1>
+                    </header>
+                    <legend>Informações Detalhadas</legend>
+                    <div>
+                        <div class="form-group">
+                            <label class="label" for="">Atividade desenvolvidas (Descrição para o site)</label>
+                            <textarea class="input" rows="4" name="descricaoVaga" cols="50" placeholder="Escreva..."></textarea>
+                        </div>
+                        <div class="form-group select">
+                            <label class="label">Origem da Vaga:</label>
+                            <select class="input" name="idOrigemVaga">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Substituição</option>
+                                <option value="2">Aumento de quadro</option>
+                            </select>
+
+                            <label class="label" for="">Cidade/Base</label>
+                            <select class="input" name="idCidade">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Porto Alegre</option>
+                                <option value="2">São Paulo</option>
+                                <option value="3">Ohio</option>
+                                <option value="4">Florida</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Líder Imediato</label>
+                            <input class="input" type="text" name="liderImediato" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Tempo de projeto</label>
+                            <input class="input" type="text" name="tempoProjeto" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Cliente</label>
+                            <input class="input" type="text" name="clienteProjeto" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Horário de trabalho</label>
+                            <input class="input" type="text" name="horasTrabalho" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Previsão de início</label>
+                            <input class="input" id="calendario-previsao-inicio" type="text" name="previsaoInicio">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <!--  -->
+            <div class="second-block">
+                <fieldset class="form-wrapper">
+                    <legend>Processo Seletivo</legend>
+                    <div>
+                        <div class="form-group">
+                            <label class="label" for="">Aplicar prova técnica: </label>
+                            <select class="input" name="necessidadeProvaTecnica">
+                                <option value="" selected>Selecione</option>
+                                <option value="true">Sim</option>
+                                <option value="false">Não</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">A prova é eliminatória? </label>
+                            <select class="input" name="eliminatoriaProvaTecnica">
+                                <option value="" selected>Selecione</option>
+                                <option value="true">Sim</option>
+                                <option value="false">Não</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for>Se sim, qual a nota mínima?</label>
+                            <input class="input" name="notaMinimaProvaTecnica" type="number">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Profissional que vai corrigir a prova</label>
+                            <input class="input" type="text" name="corretorProva" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Profissional que fará entrevista técnica</label>
+                            <input class="input" type="text" name="entrevistador" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">3 perguntas que podem ser feitas pelo RH e são determinantes para o processo de recrutamento</label>
+                            <textarea class="input" rows="4" name="perguntasRH" cols="50" placeholder="Escreva..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Entrevista no cliente será uma etapa do processo?</label>
+                            <select class="input" name="entrevistaCliente">
+                                <option value="" selected>Selecione</option>
+                                <option value="true">Sim</option>
+                                <option value="false">Não</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="third-block">
+                <fieldset class="form-wrapper">
+                    <legend>Informações Básicas</legend>
+                    <div>
+                        <div class="form-group">
+                            <label class="label" for="">Solicitante/responsável pelo processo:</label>
+                            <input class="input" type="text" name="solicitante" placeholder=" Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Data da Solicitação:</label>
+                            <input class="input" type="text" id="calendario-data-solicitacao" name="datalSolicitacao" placeholder=" Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="data-inicio">Data do início do Projeto:</label>
+                            <input class="input" type="text" id="calendario-data-inicio" name="dataInicioProjeto" placeholder=" Digite aqui" id="data-inicio">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Tipo de Vaga: </label>
+                            <select class="input" name="idTipoVaga">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Aberta</option>
+                                <option value="2">Em prospecção</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Cargo: (nome da vaga)</label>
+                            <select class="input" name="idCargo">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Desenvolvimento Java</option>
+                                <option value="2">Desenvolvimento .NET</option>
+                                <option value="3">DBA</option>
+                                <option value="4">Analista de Sistemas</option>
+                                <option value="5">Analista Administrativo</option>
+                                <option value="6">Desenvolvedor PHP</option>
+                                <option value="7">Jovens Talentos</option>
+                                <option value="8">Analista de Marketing</option>
+                                <option value="9">Gerente de Contas</option>
+                                <option value="10">Consultor SAP</option>
+                                <option value="11">Desenvolvedor</option>
+                                <option value="12">Account Executive</option>
+                                <option value="13">Analista de contas a pagar</option>
+                                <option value="14">Analista de monitoração</option>
+                                <option value="15">Analista de negórcios</option>
+                                <option value="16">Analista de RH</option>
+                                <option value="17">Analista de Suporte</option>
+                                <option value="18">Analista de Teste</option>
+                                <option value="19">Analista Financeiro</option>
+                                <option value="20">Arquiteto de Software</option>
+                                <option value="21">Arquiteto de Soluções Cloud</option>
+                                <option value="22">Assistente Comercial</option>
+                                <option value="23">Assistente de Marketing</option>
+                                <option value="24">Assistente de RH</option>
+                                <option value="25">Cloud SysOp Administrator</option>
+                                <option value="26">Consultor de Aplicação Jurídica</option>
+                                <option value="27">Consultor SD</option>
+                                <option value="28">Desenvolvedor ABAP</option>
+                                <option value="29">Desenvolvedor Front-End</option>
+                                <option value="30">Desenvolvedor Node-JS</option>
+                                <option value="31">Desenvolvedor Sharepoint</option>
+                                <option value="32">Desenvolvedor Web</option>
+                                <option value="33">Designer</option>
+                                <option value="34">Google Enterprise Sales</option>
+                                <option value="35">Google Inside Sales</option>
+                                <option value="36">Inside Sales</option>
+                                <option value="37">Jovem Aprendiz</option>
+                                <option value="38">Líder de Equipe</option>
+                                <option value="39">Líder de Infraestrutura</option>
+                                <option value="40">Product Owner</option>
+                                <option value="41">Recepcionista</option>
+                                <option value="42">Scrum Master</option>
+                                <option value="43">Desenvolvedor Python</option>
+                                <option value="44">Engenheiro de Suporte Aplicação</option>
+                                <option value="45">Desenvolvedor Outsystems</option>
+                                <option value="46">Desenvolvedor iOS</option>
+                                <option value="47">Gerente de Projetos</option>
+                                <option value="48">Desenvolvedor Android</option>
+                                <option value="49">Líder de Área</option>
+                                <option value="50">Consultor Comercial</option>
+                                <option value="51">Software Engineer</option>
+                                <option value="52">Deploy Google</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Área:</label>
+                            <select class="input" name="idArea">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Desenvolvimento</option>
+                                <option value="2">Recursos Humanos</option>
+                                <option value="3">Ratio</option>
+                                <option value="4">Operações</option>
+                                <option value="5">Business</option>
+                                <option value="6">Marketing</option>
+                                <option value="7">Departamento Pessoal</option>
+                                <option value="8">Financeiro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Quantidade:</label>
+                            <input class="input" type="text" name="quantidadeVaga" placeholder=" Digite aqui">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Tipo de contratação: </label>
+                            <select class="input" name="idTipoContratacao">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">CLT</option>
+                                <option value="3">Estágio</option>
+                                <option value="2">Terceiro</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="four-block">
+                <fieldset class="form-wrapper">
+                    <legend>Perfil</legend>
+                    <div>
+                        <div class="form-group">
+                            <label class="label" for="">Perfil: </label>
+                            <select class="input" name="idNivelTecnico">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Júnior</option>
+                                <option value="2">Pleno</option>
+                                <option value="3">Senior</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Tempo de Experiência desejável: </label>
+                            <select class="input" name="idTempoExperiencia">
+                                <option value="" selected>Selecione</option>
+                                <option value="1">Até 2 anos</option>
+                                <option value="2">De 2 a 4 anos</option>
+                                <option value="3">Acima de 4 anos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Conhecimentos técnicos/Habilidades</label>
+                            <textarea class="input" rows="4" name="skills" cols="50" placeholder="Escreva..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Características comportamentais</label>
+                            <textarea class="input" rows="4" name="caracteristicasComportamentais" cols="50" placeholder="Escreva..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Formação/Escolaridade</label>
+                            <select class="input" name="idEscolaridade">
+                                <option value="1">Ensino Médio Completo</option>
+                                <option value="2">Ensino Médio Incompleto</option>
+                                <option value="3">Superior Completo</option>
+                                <option value="4">Superior Incompleto</option>
+                                <option value="5">Pós-Graduação/Especialização</option>
+                                <option value="6">Mestrado</option>
+                                <option value="7">Doutorado</option>
+                                <option value="8">Pós-Doutorado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="">Faixa de remuneração/Valor hora</label>
+                            <input class="input" type="text" name="faixaRemuneracao" placeholder="Digite aqui">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="btn -right" type="submit">Enviar</button>
+            <button class="btn -right" type="button" data-next>Próximo</button>
+            <button class="btn -left" type="button" data-previous >Voltar</button>
+        </form>
+    </div>
+
+    <!-- inicio do js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.1/qs.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script src="Javascript/requisiscaoVagaSubmit.js"></script>
+    <script src="Javascript/inputsDatepicker.js"></script>
+    <script type="text/javascript">
+
+
+        $("[data-previous]").hide();
+        $(".submit").hide();
+        $(".second-block").hide();
+        $(".third-block").hide();
+        $(".four-block").hide();
+
+        let page = 1;
+
+        $("[data-next]").click(function () {
+            if (page === 1) {
+                $(".second-block").show();
+                $(".first-block").hide();
+                $("[data-previous]").show();
+                page++;
+            } else if (page === 2) {
+                $(".third-block").show();
+                $(".second-block").hide();
+                page++;
+            } else if (page === 3) {
+                $(".four-block").show();
+                $(".third-block").hide();
+                $(".submit").show();
+                $("[data-next]").hide();
+                page++;
+            }
+        });
+
+        $("[data-previous]").click(function () {
+            if (page === 2) {
+                $("[data-previous]").hide();
+                $(".first-block").show();
+                $(".second-block").hide();
+                page--;
+            } else if (page === 3) {
+                $(".second-block").show();
+                $(".third-block").hide();
+                page--;
+            } else if (page === 4) {
+                $(".third-block").show();
+                $(".four-block").hide();
+                $("[data-next]").show();
+                $(".submit").hide();
+                page--;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
