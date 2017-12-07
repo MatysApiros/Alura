@@ -15,6 +15,7 @@ h2{
     font-family: "Arial", "Open Sans Condensed", sans-serif;
     font-weight: bold;
     font-size: 30px;
+    clear: both;
 }
 
 body{
@@ -28,6 +29,8 @@ p{
     padding: 20px 0 20px 0;
 }
 
+
+
 .block{
     background-color: #D9E5E3;
     width: 250px;
@@ -36,11 +39,32 @@ p{
     border: 10px solid #C2CCCA;
 }
 
+.block1{
+    float: right;
+    margin-left: 20px;
+}
+
+.block2{
+    float: left;
+    margin-right: 20px;
+}
+
 .navegacao-site {
     background-color: #3C1D3D;
     color: #F2FFFC;
-    padding: 20px;
     text-align: center;
+    float: right;
+    clear: right;
+    width: 15%;
+    box-sizing: border-box;
+    border: 5px solid black;
+}
+
+img{
+    float: right;
+    width: 15%;
+    box-sizing: border-box;
+    border: 5px solid black;
 }
 
 #rodape-bio {
@@ -82,7 +106,7 @@ body a{
 .navegacao-site h1{
     font-family: "Arial", "Open Sans Condensed", sans-serif;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     padding: 0 0 25px 0;
     text-transform: uppercase;
 }
@@ -97,6 +121,7 @@ em{
 
 .navegacao-site ul{
     list-style: none;
+    padding: 0;
 }
 
 .links-sociais a{
@@ -133,4 +158,13 @@ article {
 
 .linkedin{
     background-image: url(linkedin.png);
+}
+
+main{
+    float: left;
+    width: 85%;
+}
+
+footer{
+    clear: both;
 }
