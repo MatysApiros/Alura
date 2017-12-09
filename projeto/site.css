@@ -57,14 +57,18 @@ p{
     clear: right;
     width: 15%;
     box-sizing: border-box;
-    border: 5px solid black;
+    border: 10px solid black;
+    position: relative;
+    top:310px;    
 }
 
 img{
     float: right;
-    width: 15%;
     box-sizing: border-box;
-    border: 5px solid black;
+    border: 10px solid black;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 #rodape-bio {
@@ -163,8 +167,12 @@ article {
 main{
     float: left;
     width: 85%;
+    padding-bottom: 80px;
 }
 
 footer{
     clear: both;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
