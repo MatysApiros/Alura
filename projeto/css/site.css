@@ -1,0 +1,61 @@
+main h1{
+    font-size: 60px;
+    background-color: #851944;
+    color: #FFF;
+    text-align: center;
+    padding: 25px;
+    margin: 0;
+    border-bottom: 10px solid black;
+    font-family: "Arial", "Open Sans Condensed", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2{
+    font-family: "Arial", "Open Sans Condensed", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    clear: both;
+}
+
+body{
+    background-color: #F2FFFC;
+    font-family: "Times New Roman", "Crimson Text", serif;
+    line-height: 1.5;
+}
+
+p{
+    text-align: justify;
+    padding: 20px 0 20px 0;
+}
+
+ul {
+    color: #F2FFFC;
+}
+
+ul li a {
+    color: inherit;
+}
+
+main a {
+    color: #851944;
+}
+
+body a{
+    text-decoration: none;
+}
+
+.main div{
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0 30px 0;
+}
+
+strong{
+    font-weight: bold;
+}
+
+em{
+    font-style: italic;
+}
